@@ -8,15 +8,73 @@
     <title>Document</title>
   </head>
   <body>
+    <section class="sticky">
+      <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+      </div>
+    </section>
     <div class="content">
+      <form id="myForm" method="post">
+        <div class="text-input-group">
+          <input
+            type="text"
+            id="PokemonName"
+            name="PokemonName"
+            class="inputSearch"
+            placeholder="Write a name!"
+          />
+          <br />
+          <input
+            id="get"
+            type="submit"
+            value="SEARCH"
+            class="search"
+            formaction="/search-name"
+          />
+        </div>
+      </form>
       <div class="main-header">
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png"
           alt=""
+          class="imgPokemon"
         />
-        <h3>Pokemon Name</h3>
+        <h3 class="pokemon-name">Pokemon Name</h3>
       </div>
-      <div class="second-header"></div>
+      <div class="info-container">
+        <div class="sd-header">
+          <h2>Base Stats</h2>
+          <div class="stat-container">
+            <h4>Hp: 100</h4>
+          </div>
+          <div class="stat-container">
+            <h4>Attack: 100</h4>
+          </div>
+          <div class="stat-container">
+            <h4>Defense: 100</h4>
+          </div>
+          <div class="stat-container">
+            <h4>Speed: 100</h4>
+          </div>
+        </div>
+        <div class="trd-header">
+          <h2>Habilities</h2>
+          <div class="abilitie-container">
+            <h4>Abilitie 1</h4>
+            <h4>Abilitie 2</h4>
+            <h4>Abilitie 3</h4>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

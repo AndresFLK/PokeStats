@@ -27,7 +27,7 @@
         <div class="text-input-group">
           <input
             type="text"
-            id="PokemonName"
+            id="name"
             name="PokemonName"
             class="inputSearch"
             placeholder="Write a name!"
@@ -42,39 +42,41 @@
           />
         </div>
       </form>
+      <% if (locals.content){ %>
       <div class="main-header">
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/129.png"
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%= content.id%>.png"
           alt=""
           class="imgPokemon"
         />
-        <h3 class="pokemon-name">Pokemon Name</h3>
+        <h3 class="pokemon-name"><%= content.name%></h3>
       </div>
       <div class="info-container">
         <div class="sd-header">
           <h2>Base Stats</h2>
           <div class="stat-container">
-            <h4>Hp: 100</h4>
+            <h4>Hp: <%= content.stats[0].base_stat%></h4>
           </div>
           <div class="stat-container">
-            <h4>Attack: 100</h4>
+            <h4>Attack: <%= content.stats[1].base_stat%></h4>
           </div>
           <div class="stat-container">
-            <h4>Defense: 100</h4>
+            <h4>Defense: <%= content.stats[3].base_stat%></h4>
           </div>
           <div class="stat-container">
-            <h4>Speed: 100</h4>
+            <h4>Speed: <%= content.stats[5].base_stat%></h4>
           </div>
         </div>
         <div class="trd-header">
-          <h2>Habilities</h2>
+          <h2>Abilities</h2>
           <div class="abilitie-container">
-            <h4>Abilitie 1</h4>
-            <h4>Abilitie 2</h4>
-            <h4>Abilitie 3</h4>
+            <%content.abilities.forEach((ability)=> { %>
+            <h4><%= ability.ability.name%></h4>
+            <%}) %>
           </div>
         </div>
       </div>
+      <% } %>
     </div>
   </body>
 </html>
